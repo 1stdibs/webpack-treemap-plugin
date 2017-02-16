@@ -1,6 +1,6 @@
 {
   "name": "webpack-treemap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Treemap plugin for webpack builds",
   "author": "1stdibs Front-end Engineering",
   "private": false,
