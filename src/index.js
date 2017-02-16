@@ -9,10 +9,10 @@ import {recievedStats} from './actions';
 const store = createStore(reducers);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Build />
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <Build />
+    </Provider>,
+    document.getElementById('root')
 );
 
 

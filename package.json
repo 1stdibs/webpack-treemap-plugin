@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Treemap plugin for webpack builds",
   "author": "1stdibs Front-end Engineering",
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=6.9.1"
   },

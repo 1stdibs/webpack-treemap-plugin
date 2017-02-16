@@ -2,9 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { Map } from 'immutable';
 import TreeMapCell from './TreeMapCell';
 
- class TreeMap extends Component {
+class TreeMap extends Component {
     render(){
         let graphics;
+        let fullsize;
+
         if (this.props.stats.get('chunks').size) {
             const notFullDepth = this.props.stats.get('selectedDepth') < this.props.stats.getIn(['chunks', this.props.open]).tree.height;
             graphics = this.props.stats.getIn(['chunks', this.props.open]).vis.map((item, index) => {
@@ -17,11 +19,13 @@ import TreeMapCell from './TreeMapCell';
                             fullValue={this.props.stats.getIn(['chunks', this.props.open]).fullValue}
                         />;
             });
+            fullsize = <div>fullsize: { this.props.stats.getIn(['chunks', this.props.open]).fullValue / 1000 }kb</div>;
         }
         return (<div>
-          <svg width={900} height={600}>
-            {graphics}
-          </svg>
+            { fullsize }
+            <svg width={900} height={600}>
+                { graphics }
+            </svg>
         </div>);
     }
 };

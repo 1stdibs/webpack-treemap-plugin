@@ -1,20 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { Map } from 'immutable';
-import {formatDate, formatElapsedTime } from '../utils/time';
-import {getStatsFile, changeDepth, openChunk, backToTop} from '../actions';
+import {changeDepth, openChunk, backToTop} from '../actions';
 import TreeMap from './TreeMap';
 import Select from 'react-select';
 import './Build.css';
 import { connect } from 'react-redux';
+import 'react-select/dist/react-select.css';
 
 
 class Build extends Component {
     changeDepth(e) {
         this.props.dispatch(changeDepth(Number(e.target.value)));
     }
+
     backToTop() {
         this.props.dispatch(backToTop());
     }
+
     chunkSelecter(chunks) {
         return (<Select
             className="select-boxes column"
@@ -25,6 +27,7 @@ class Build extends Component {
             onChange={(e) => this.props.dispatch(openChunk(e.value))}
           />);
     }
+
     depthSlider() {
         if (!this.props.stats.get('chunks').size) {
             return;
@@ -43,6 +46,7 @@ class Build extends Component {
             />
         </div>
     }
+
     render() {
         const chunkSelect = this.props.stats.get('chunks').map((item, index) => {
             return {value: index, label: item.name}
@@ -61,7 +65,7 @@ class Build extends Component {
         }
 
         return (
-            <li className="build-item">
+            <div className="build-item">
                 <div className="section columns treemap-inputs">
                     {chunkSelecter}
                     {depthSlider}
@@ -73,7 +77,7 @@ class Build extends Component {
                     </div>
                     {treemap}
                 </div>
-            </li>
+            </div>
         );
     }
 }

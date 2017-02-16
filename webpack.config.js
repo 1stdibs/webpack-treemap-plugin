@@ -32,34 +32,18 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                include: isLocalModuleRegex,
                 loader: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
                     loader: [
-                        {
-                            loader: 'css-loader',
-                            query: {
-                                modules: true,
-                                importLoaders: 2,
-                                localIdentName: '[name]__[local]__[hash:base64:5]',
-                                context: './'
-                            }
-                        },
-                        {
-                            loader: 'sass-loader',
-                            query: {
-                                outputStyle: 'expanded',
-                                includePaths: 'node_modules'
-                            }
-                        },
+                        'css-loader',
+                        'sass-loader',
                         'postcss-loader'
                     ]
                 })
             },
             {
                 test: /\.json$/,
-                loader: 'json',
-                include: isLocalModuleRegex
+                loader: 'json'
             }
         ]
     },
