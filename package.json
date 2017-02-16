@@ -1,0 +1,75 @@
+{
+  "name": "webpack-treemap",
+  "version": "0.1.0",
+  "description": "Treemap plugin for webpack builds",
+  "author": "1stdibs Front-end Engineering",
+  "private": true,
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "main": "plugin.js",
+  "contributors": [
+    {
+      "name": "Walker Flynn",
+      "email": "walker@1stdibs.com"
+    }
+  ],
+  "scripts": {
+    "clean": "rm -rf ./node_modules && yarn cache clean",
+    "cleaninstall": "yarn run clean && yarn install",
+    "test": "jest --config ./src/__tests__/jest.json",
+    "lint": "dibslint --root=./src --es6",
+    "precommit": "dibslint --git --warnings --es6 ",
+    "prepublish": "yarn run compile && webpack",
+    "compile": "rm -rf dist && babel src/ --out-dir dist --ignore ./**/__tests__"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "babel-loader": "^6.3.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "dibslint": "^2.2.7",
+    "enzyme": "^2.7.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "husky": "^0.12.0",
+    "immutable": "^3.8.1",
+    "jest": "^18.1.0",
+    "local-module-regex": "^1.0.4",
+    "node-sass": "^4.5.0",
+    "postcss-loader": "^1.3.0",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "redux": "^3.6.0",
+    "sass-loader": "^6.0.0",
+    "style-loader": "^0.13.1",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "peerDependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "redux": "^3.6.0"
+  },
+  "dependencies": {
+    "d3-hierarchy": "^1.0.3",
+    "gl-matrix": "^2.3.2",
+    "lodash.template": "^4.4.0",
+    "opn": "^4.0.2",
+    "pui-css-tooltips": "^7.5.4",
+    "pui-react-overlay-trigger": "^7.5.4",
+    "pui-react-tooltip": "^7.5.4",
+    "react-redux": "^5.0.2",
+    "react-select": "^1.0.0-rc.3",
+    "webpack": "^2.2.1"
+  }
+}
