@@ -62,7 +62,7 @@ export default class Node {
     }
 
     findDeduper() {
-        if (!this.deduper) {
+        if (!this.deduper && this.children.length) {
             return this.children.reduce((memo, item) => {
                 return item.findDeduper();
             });
