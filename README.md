@@ -11,7 +11,7 @@ npm install --save-dev webpack-treemap
 ```
 
 ## Usage:
-to build a treemap just add this package to plugins in your webpackConfig and invoke it with a boolean. The boolean decides whether to make a treemap or pass a boolean noop to webpack.  I recomend controlling this boolean with an environment variable. 
+to build a treemap just add this package to plugins in your webpackConfig and invoke it with a boolean. The boolean decides whether to make a treemap or pass a noop to webpack.  I recomend controlling this boolean with an environment variable. 
 
 ```js
 webpackConfig.plugins.push();
