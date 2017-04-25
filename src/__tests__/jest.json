@@ -1,6 +1,5 @@
 {
   "moduleFileExtensions": [ "js",  "jsx" ],
-  "collectCoverage": true,
   "coverageDirectory": "./coverage",
   "coverageThreshold": {
     "global": {
