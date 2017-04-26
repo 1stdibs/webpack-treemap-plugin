@@ -1,27 +1,24 @@
 {
-  "name": "webpack-treemap",
-  "version": "0.1.3",
-  "description": "Treemap plugin for webpack builds",
+  "name": "webpack-treemap-plugin",
+  "description": "Generate treemap graphs of your webpack builds.",
+  "version": "1.0.0",
   "author": "1stdibs Front-end Engineering",
-  "private": false,
-  "engines": {
-    "node": ">=6.9.1"
+  "bugs": {
+    "url": "https://github.com/1stdibs/webpack-treemap-plugin/issues"
   },
-  "main": "plugin.js",
   "contributors": [
     {
       "name": "Walker Flynn",
       "email": "walker@1stdibs.com"
+    },
+    {
+      "name": "Tim Whidden",
+      "email": "tim@1stdibs.com"
     }
   ],
-  "scripts": {
-    "clean": "rm -rf ./node_modules && yarn cache clean",
-    "cleaninstall": "yarn run clean && yarn install",
-    "test": "jest --config ./src/__tests__/jest.json",
-    "lint": "dibslint --root=./src --es6",
-    "precommit": "dibslint --git --warnings --es6 ",
-    "prepublish": "yarn run compile && webpack",
-    "compile": "rm -rf dist && babel src/ --out-dir dist --ignore ./**/__tests__"
+  "dependencies": {
+    "lodash.template": "^4.4.0",
+    "opn": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -36,40 +33,65 @@
     "babel-preset-react": "^6.22.0",
     "babel-register": "^6.22.0",
     "css-loader": "^0.26.1",
+    "d3-hierarchy": "^1.0.3",
     "dibslint": "^2.2.7",
     "enzyme": "^2.7.0",
     "extract-text-webpack-plugin": "^2.0.0-beta",
+    "gl-matrix": "^2.3.2",
     "husky": "^0.12.0",
     "immutable": "^3.8.1",
-    "jest": "^18.1.0",
+    "jest": "^19.0.2",
     "local-module-regex": "^1.0.4",
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.3.0",
-    "react": "^15.4.2",
+    "pui-css-tooltips": "^7.5.4",
+    "pui-react-overlay-trigger": "^7.5.4",
+    "pui-react-tooltip": "^7.5.4",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-select": "^1.0.0-rc.3",
     "react-test-renderer": "^15.4.2",
     "redux": "^3.6.0",
     "sass-loader": "^6.0.0",
     "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
     "webpack-node-externals": "^1.5.4"
   },
-  "peerDependencies": {
-    "immutable": "^3.8.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "redux": "^3.6.0"
+  "engines": {
+    "node": ">=6.9.1"
   },
-  "dependencies": {
+  "homepage": "https://github.com/1stdibs/webpack-treemap-plugin",
+  "keywords": [
+    "charts",
+    "graph",
+    "webpack",
+    "webpack-plugin",
+    "webpack2"
+  ],
+  "license": "MIT",
+  "main": "plugin.js",
+  "peerDependencies": {
     "d3-hierarchy": "^1.0.3",
     "gl-matrix": "^2.3.2",
-    "lodash.template": "^4.4.0",
-    "opn": "^4.0.2",
-    "pui-css-tooltips": "^7.5.4",
-    "pui-react-overlay-trigger": "^7.5.4",
-    "pui-react-tooltip": "^7.5.4",
+    "immutable": "^3.8.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
-    "react-select": "^1.0.0-rc.3",
-    "webpack": "^2.2.1"
+    "redux": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1stdibs/webpack-treemap-plugin.git"
+  },
+  "scripts": {
+    "clean": "rm -rf ./node_modules && yarn cache clean",
+    "cleaninstall": "yarn run clean && yarn install",
+    "lint": "dibslint --root=./src --es6",
+    "precommit": "dibslint --git --warnings --es6 ",
+    "prepublish": "webpack",
+    "test": "jest --config ./src/__tests__/jest.json",
+    "test:coverage": "jest --config ./src/__tests__/jest.json --coverage"
   }
 }

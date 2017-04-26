@@ -10,15 +10,15 @@ export const hoverDupe = dupeName => {
     return {
         type: HOVER_DUPE,
         data: dupeName
-    }
-}
+    };
+};
 
 export const changeDepth = (depth) => {
     return {
         type: CHANGE_DEPTH,
         data: depth
-    }
-}
+    };
+};
 
 export const openChunk = (open) => {
     return {
@@ -37,12 +37,12 @@ export const zoomOnNode = (node) => {
     return {
         type: ZOOM_ON_NODE,
         data: node
-    }
+    };
 };
 
 export const recievedStats = (statsJson) => {
     return {
         type: RECIEVED_STATS,
         data: statsJson
-    }
+    };
 };

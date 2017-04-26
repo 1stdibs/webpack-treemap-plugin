@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css"/>
-    <link href="<%= stylesheet %>" rel="stylesheet">
+    <style type="text/css">
+      <%= css %>
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="text/javascript" src="<%= js %>"></script>
     <script type="text/javascript">
-        window.addStats(<%= stats %>)
+      <%= js %>
+      window.addStats(<%= stats %>);
     </script>
   </body>
 </html>
